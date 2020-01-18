@@ -74,7 +74,7 @@ namespace {
         ssize_t nread = recvPeek(sockfd, buf, sizeof(buf));
         if (nread == -1) {
             LogError("recvPeek error!");
-            exit(EXIT_FAILURE);
+            return false;
         }
         return (nread == 0);
     }
@@ -116,16 +116,17 @@ namespace Henry {
             }
             // struct_event
             for (int i = 0; i != nready; ++i) {
+
                 if (activeEvents[i].data.fd == listenfd) {
                     if (activeEvents[i].events & EPOLLIN) {
                         handleConnection();
-                    } else if (activeEvents[i].data.fd == eventfd) {
-                        handleRead();
-                        doPendingFunctors();
-                    } else {
-                        if (activeEvents[i].events & EPOLLIN)
-                            handleMessage(activeEvents[i].data.fd);
                     }
+                } else if (activeEvents[i].data.fd == eventfd) {
+                    handleRead();
+                    doPendingFunctors();
+                } else {
+                    if (activeEvents[i].events & EPOLLIN)
+                        handleMessage(activeEvents[i].data.fd);
                 }
             }
         }
@@ -198,8 +199,7 @@ namespace Henry {
             iter->second->handleCloseCallback();
             delEpollReadFd(epollfd, peerfd);
             fd2ConnList.erase(iter);
-        }
-        else{
+        } else {
             iter->second->handleMessageCallback();
         }
     }
