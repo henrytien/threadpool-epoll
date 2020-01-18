@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.9)
+project(client)
+
+set(CMAKE_CXX_STANDARD 11)
+add_executable(Client.exe Client.cpp Client.h Log4Func.cpp Log4Func.h)
