@@ -1,8 +1,9 @@
 // tianhangyu8886@gmail.com
 // Created by Henry on 1/18/2020.
 #include <fstream>
-#include "./include/Configuration.h"
-#include "include/log/Log4Func.h"
+#include "../include/Configuration.h"
+#include "../include/log/Log4Func.h"
+
 
 namespace Henry
 {

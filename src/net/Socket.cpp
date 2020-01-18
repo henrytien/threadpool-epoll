@@ -39,7 +39,7 @@ namespace Henry {
 #endif
 
     void Socket::bindAddress(const InetAddress &addr) {
-        if (::bind(sockfd, (SA *) addr.getSockAddrInet(), sizeof(addr)) == -1) {
+        if (::bind(sockfd, (SA *)addr.getSockAddrInet(), sizeof(addr)) == -1) {
             LogError("Socket::bindAddress bind address error!");
             exit(EXIT_FAILURE);
         }

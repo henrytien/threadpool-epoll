@@ -1,8 +1,8 @@
 // tianhangyu8886@gmail.com
 // Created by Henry on 1/18/2020.
 
-#include "./include/log/Log4Func.h"
-#include "include/String2UpperServer.h"
+#include "../include/log/Log4Func.h"
+#include "../include/String2UpperServer.h"
 
 int main(int argc,char *argv[])
 {

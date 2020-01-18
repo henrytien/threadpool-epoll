@@ -2,11 +2,12 @@
 // Created by Henry on 1/18/2020.
 
 
-#include "include/Configuration.h"
-#include "include/String2UpperServer.h"
-#include "include/log/Log4Func.h"
+#include "../include/Configuration.h"
+#include "../include/String2UpperServer.h"
+#include "../include/log/Log4Func.h"
+#include "../include/FileName.h"
+#include <unistd.h>
 #include <algorithm>
-#include <io.h>
 using std::bind;
 namespace Henry {
     String2Upper::String2Upper(Configuration &conf) :
@@ -53,8 +54,8 @@ namespace Henry {
     void String2UpperServer::start() {
         threadPool.start();
         tcpServer.setConnectCallback(bind(&str2UpServer::onConnection, this, std::placeholders::_1));
-        tcpServer.setMessageCallback(bind(&str2UpServer::onMessage,this,std::placeholders::_2));
-        tcpServer.setCloseCallback(bind(&str2UpServer::onClose,this,std::placeholders::_3));
+        tcpServer.setMessageCallback(bind(&str2UpServer::onMessage,this,std::placeholders::_1));
+        tcpServer.setCloseCallback(bind(&str2UpServer::onClose,this,std::placeholders::_1));
 
         tcpServer.start();
     }
