@@ -27,5 +27,21 @@ namespace Henry
         bool islocking;
         pthread_mutex_t mutex;
     };
+    // use constructor and deconstructor
+    class MutexLockGuard{
+    public:
+        MutexLockGuard(MutexLock &mutex)
+                :mutex(mutex){
+            mutex.lock();
+        }
+        ~MutexLockGuard()
+        {
+            mutex.unlock();
+        }
+
+    private:
+        MutexLock &mutex;
+
+    };
 }
 #endif //THREADPOOL_EPOLL_MUTEXLOCK_H

@@ -13,7 +13,7 @@ namespace Henry {
             LogError("create socket fd error!");
             exit(EXIT_FAILURE);
         }
-        LogInfo("new fd: " + fd.tostring());
+       // LogInfo("new fd: ");
         return fd;
     }
 

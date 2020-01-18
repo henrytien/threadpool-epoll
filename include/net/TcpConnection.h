@@ -62,7 +62,7 @@ namespace Henry {
 
         void sendInLoop(const std::string &s);
 
-        std::string TcpConnection::PrintInetAddressInfo() const;
+        std::string PrintInetAddressInfo() const;
 
 
     private:

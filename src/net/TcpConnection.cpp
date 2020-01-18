@@ -5,6 +5,7 @@
 #include "../../include/net/TcpConnection.h"
 #include "Log4Func.h"
 #include "EpollPoller.h"
+#include <cstring>
 
 namespace Henry {
     TcpConnection::TcpConnection(int sockfd, EpollPoller *p)
@@ -68,7 +69,8 @@ namespace Henry {
 
     std::string TcpConnection::receive() {
         int size = 2 << 16 - 1;
-        char str[size] = {0};
+        char str[size];
+        memset(str,0,sizeof(str));
         int ret = readLine(str, sizeof(str));
         if (ret == 0)
             return std::string();
