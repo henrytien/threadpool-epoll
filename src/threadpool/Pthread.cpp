@@ -27,7 +27,7 @@ namespace Henry {
     void *Thread::threadFunc(void *arg) {
         Thread* pthread = static_cast<Thread*>(arg);
         if(pthread){
-            pthread->threadCb;
+            pthread->threadCb();
         }
         return NULL;
     }

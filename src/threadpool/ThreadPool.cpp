@@ -13,8 +13,7 @@ namespace Henry {
 
     void ThreadPool::start() {
         for (int i = 0; i < threadNum; ++i) {
-            shared_ptr<Thread> threadSharedPtr(new Thread(std::bind(&
-                                                                            ThreadPool::processTask, this)));
+            shared_ptr<Thread> threadSharedPtr(new Thread(std::bind(&ThreadPool::processTask, this)));
             if (threadSharedPtr == NULL) {
                 LogError("new threadSharedPtr fail!");
                 return;
