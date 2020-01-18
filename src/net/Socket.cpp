@@ -31,8 +31,8 @@ namespace Henry {
     {
         setReuseAddr(true);
         setReusePort(true);
-        setKeepAlive(true);
-        setTcpNoDelay(true);
+        setKeepAlive(false);
+        setTcpNoDelay(false);
         bindAddress(inetAddress);
         listen();
     }
