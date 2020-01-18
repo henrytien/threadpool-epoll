@@ -41,9 +41,9 @@ namespace Henry {
         return ntohs(addr.sin_port);
     }
 
-//    const struct sockaddr_in * InetAddress::getSockAddrInet() const {
-//        return &addr;
-//    }
+    const struct sockaddr_in * InetAddress::getSockAddrInet() const {
+        return &addr;
+    }
 
 }
 
