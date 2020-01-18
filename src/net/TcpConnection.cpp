@@ -56,4 +56,42 @@ namespace Henry {
         }
         return ret;
     }
+
+    ssize_t TcpConnection::readLine(char *usrbuf, size_t maxlen) {
+        ssize_t ret = sockIO.readline(usrbuf, maxlen);
+        if (ret == Error) {
+            LogError("TcpConnection::readline error!");
+            exit(EXIT_FAILURE);
+        }
+        return ret;
+    }
+
+    std::string TcpConnection::receive() {
+        int size = 2 << 16 - 1;
+        char str[size] = {0};
+        int ret = readLine(str, sizeof(str));
+        if (ret == 0)
+            return std::string();
+        else
+            return std::string(str);
+    }
+
+    void TcpConnection::send(const std::string &s) {
+        writen(s.c_str(), s.size());
+    }
+
+    void TcpConnection::sendInLoop(const std::string &s) {
+        epollPoller->runInLoop(std::bind(&TcpConnection::send, shared_from_this(), s));
+    }
+
+    std::string TcpConnection::PrintInetAddressInfo() const
+    {
+        char text[100]={0};
+        snprintf(text, sizeof(text),"%s:%d -> %s:%d",
+        localAddr.toIp().c_str(),
+        localAddr.toPort(),
+        peerAddr.toIp(),
+        peerAddr.toPort());
+        return text;
+    }
 }

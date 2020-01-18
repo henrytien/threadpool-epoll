@@ -54,7 +54,7 @@ namespace Henry {
 
         ssize_t writen(const char *buf, size_t count);
 
-        ssize_t readline(char *usrbuf, size_t maxlen);
+        ssize_t readLine(char *usrbuf, size_t maxlen);
 
         std::string receive();
 
@@ -62,6 +62,7 @@ namespace Henry {
 
         void sendInLoop(const std::string &s);
 
+        std::string TcpConnection::PrintInetAddressInfo() const;
 
 
     private:
