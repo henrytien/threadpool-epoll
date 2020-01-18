@@ -37,9 +37,10 @@ namespace Henry {
         str[str.size() - 1] = ' ';
         str.erase(str.find_last_not_of(' ') + 1);
         str.erase(0, str.find_first_not_of(' '));
-//        for (int i = 0; i < str.size(); ++i) {
-//            if(str[i] >='A')
-//        }
+        for (int i = 0; i < str.size(); ++i) {
+            if(str[i] >='A' && str[i] <='Z')
+                str[i] += 32;
+        }
     }
 
 

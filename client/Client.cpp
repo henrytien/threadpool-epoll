@@ -20,7 +20,7 @@ void do_service(int sockfd) {
             exit(EXIT_SUCCESS);
         }
         LogInfo(" receve message = " + string(recvbuf) + " ");
-        cout << endl;
+        printf("\n");
         memset(sendbuf, 0, sizeof(sendbuf));
         fgets(sendbuf, sizeof(sendbuf), stdin);
         write(sockfd, sendbuf, strlen(sendbuf));

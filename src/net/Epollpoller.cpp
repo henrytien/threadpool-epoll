@@ -108,7 +108,7 @@ namespace Henry {
             LogError("epoll wait error!");
             exit(EXIT_FAILURE);
         } else if (nready == 0) {
-            LogInfo("epoll timeout.");
+            //LogInfo("epoll timeout.");
         } else {
             // when vector full, allocate memory
             if (nready == static_cast<int>(activeEvents.size())) {
