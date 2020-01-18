@@ -10,7 +10,7 @@ namespace Henry {
     }
 
     MutexLock::~MutexLock() {
-        pthread_mutex_destory(&mutex);
+        pthread_mutex_destroy(&mutex);
     }
 
     void MutexLock::lock() {

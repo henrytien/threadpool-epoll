@@ -6,7 +6,7 @@
 
 namespace Henry {
     Buffer::Buffer(size_t size) :
-            mutex(), notFull(mutex), notFull(mutex), size(size), flag(true) {}
+            mutex(), notFull(mutex), notEmpty(mutex),size(size), flag(true) {}
 
     bool Buffer::full() {
         return queue.size() == size;

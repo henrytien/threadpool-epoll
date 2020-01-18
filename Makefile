@@ -1,7 +1,7 @@
 INC_DIR:= ./include ./include/net ./include/threadpool ./include/log
 SRC_DIR:= ./src/ ./src/net ./src/log ./src/threadpool
 
-OBJS:= $(wildcard ./src/*.cpp) $(wildcard ./src/net/*.cpp) $(wildcard ./src/log/*.cpp)
+OBJS:= $(wildcard ./src/*.cpp) $(wildcard ./src/net/*.cpp) $(wildcard ./src/log/*.cpp) $(wildcard ./src/threadpool/*.cpp)  
 INC_FILE:= $(addprefix -I ,$(INC_DIR))
 
 CXX:= g++

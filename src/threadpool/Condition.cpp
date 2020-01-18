@@ -12,13 +12,13 @@ namespace Henry
     }
 
     Condition::~Condition() {
-        pthread_cond_init(&cond);
+        pthread_cond_destroy(&cond);
     }
 
     void Condition::wait() {
         pthread_cond_wait(&cond,mutex.getMutexLockPtr());
     }
-    void Conditon::notify()
+    void Condition::notify()
     {
         pthread_cond_signal(&cond);
     }
