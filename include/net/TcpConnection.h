@@ -62,8 +62,11 @@ namespace Henry {
 
         void sendInLoop(const std::string &s);
 
-        std::string PrintInetAddressInfo() const;
+        const InetAddress &getLocalAddr() const { return localAddr; }
 
+        const InetAddress &getPeerAddr() const { return peerAddr; }
+
+        std::string PrintInetAddressInfo() const;
 
     private:
         Socket sockfd;

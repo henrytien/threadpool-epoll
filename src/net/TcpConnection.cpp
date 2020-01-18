@@ -92,7 +92,7 @@ namespace Henry {
         snprintf(text, sizeof(text),"%s:%d -> %s:%d",
         localAddr.toIp().c_str(),
         localAddr.toPort(),
-        peerAddr.toIp(),
+        peerAddr.toIp().c_str(),
         peerAddr.toPort());
         return text;
     }

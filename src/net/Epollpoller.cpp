@@ -16,7 +16,7 @@
 
 namespace {
     int createEpollFd() {
-        int epollfd = ::epoll_creat1(0);
+        int epollfd = ::epoll_create1(0);
         if (epollfd == Error) {
             LogError("create epoll fd error!");
             exit(EXIT_FAILURE);
