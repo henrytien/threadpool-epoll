@@ -199,6 +199,9 @@ namespace Henry {
             delEpollReadFd(epollfd, peerfd);
             fd2ConnList.erase(iter);
         }
+        else{
+            iter->second->handleMessageCallback();
+        }
     }
 
     void EpollPoller::loop() {

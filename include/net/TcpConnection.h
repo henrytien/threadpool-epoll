@@ -28,7 +28,7 @@ namespace Henry {
         ~TcpConnection();
 
         void setConnectCallback(TcpConnectionCallback cb) {
-            onCloseCallback = std::move(cb);
+            onConnectionCallback = std::move(cb);
         }
 
         void setMessageCallback(TcpConnectionCallback cb) {
