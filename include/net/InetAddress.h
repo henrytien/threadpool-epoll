@@ -8,6 +8,7 @@
 
 #include <string>
 #include <netinet/in.h>
+#define Error -1
 using std::string;
 namespace Henry
 {

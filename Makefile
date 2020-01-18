@@ -1,5 +1,5 @@
-INC_DIR:= ./include ./include/net ./include/log
-SRC_DIR:= ./src/ ./src/net ./src/log
+INC_DIR:= ./include ./include/net ./include/threadpool ./include/log
+SRC_DIR:= ./src/ ./src/net ./src/log ./src/threadpool
 
 OBJS:= $(wildcard ./src/*.cpp) $(wildcard ./src/net/*.cpp) $(wildcard ./src/log/*.cpp)
 INC_FILE:= $(addprefix -I ,$(INC_DIR))
