@@ -33,7 +33,7 @@ MyLog::MyLog() : cat(Category::getRoot().getInstance("mycat")) {
     OstreamAppender *osApp = new OstreamAppender("osApp", &cout);
     osApp->setLayout(ptn1);
 
-    FileAppender *fileApp = new FileAppender("fileApp", "./Log/log4test.log");
+    FileAppender *fileApp = new FileAppender("fileApp", "./log/server.log");
     fileApp->setLayout(ptn2);
 
     cat.addAppender(osApp);
