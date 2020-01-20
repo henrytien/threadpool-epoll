@@ -25,15 +25,16 @@ namespace Henry {
     }
 
     void *Thread::threadFunc(void *arg) {
-        Thread* pthread = static_cast<Thread*>(arg);
-        if(pthread){
+        Thread *pthread = static_cast<Thread *>(arg);
+        if (pthread) {
             pthread->threadCb();
         }
         return NULL;
     }
+
     Thread::~Thread() {
         LogInfo("Thread::~Thread().");
-        if(isRunning){
+        if (isRunning) {
             pthread_detach(pthreadId); //resource
             isRunning = false;
         }
