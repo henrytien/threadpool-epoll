@@ -48,8 +48,8 @@ Here are class diagram and sequence diagram.
 ![log](./images/log.png)
 
 # Refrence
-[1][cpprefrence](https://en.cppreference.com/w/cpp/utility)
-[2][StarUML](https://docs.staruml.io/)
-[3][GDB](https://thispointer.com//gdb-debugger-tutorial-series/)
-[4][epoll](http://man7.org/linux/man-pages/man7/epoll.7.html)
-[5][Class diagram](https://en.wikipedia.org/wiki/Class_diagram)
+1. [cpprefrence](https://en.cppreference.com/w/cpp/utility)
+2. [StarUML](https://docs.staruml.io/)
+3. [GDB](https://thispointer.com//gdb-debugger-tutorial-series/)
+4. [epoll](http://man7.org/linux/man-pages/man7/epoll.7.html)
+5. [Class diagram](https://en.wikipedia.org/wiki/Class_diagram)
