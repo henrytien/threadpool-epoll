@@ -1,13 +1,12 @@
 
 ## Introduction
-The project uses Linux epoll and thread poll build the server and have a client demo.
-the thread pool has two-part, one is buffer, like a message queue, use a producer-consumer model implement by condition, and the other is multithread by with mutex to avoid deadlock.
+This project implements a server using Linux epoll and thread poll. The thread pool consists of a buffer and multithread mechanism. The buffer is a message queue, which applies producer-consumer model to process requests sent by clients. Mutex is used for multithread in order to avoid deadlock.
 
 epoll provides a simple but high-efficient polling mechanism:
 (1) epoll_create1 creates a epoll instance;
 (2) epoll_ctl modifies the file descriptors in epoll instance;
 (3) epoll_wait is used to wait I/O events.
-## Requirements
+## Usage
 1. when you want architecture to support multiple clients at the same time.
 
 
